@@ -1,0 +1,7 @@
+{
+  "name": "ErMelloIT",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

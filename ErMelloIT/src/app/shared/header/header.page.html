@@ -1,0 +1,98 @@
+<ion-header>
+  <ion-grid [fixed]="true">
+
+    <!-- Mobile Devices -->
+    <ion-row class="ion-text-center ion-hide-md-up">
+      <ion-col size="6">
+        <ion-img [src]="headerLogoImg.src" [title]="headerLogoImg.title"
+                 [alt]="headerLogoImg.alt" [style]="headerLogoImg.style_sm"></ion-img>
+
+      </ion-col>
+      <ion-col size="6" class="ion-text-right">
+        <ion-button class="headerMenuButton" (click)="isMobileMenuActive = !isMobileMenuActive;
+        mobileMenu(isMobileMenuActive)">
+          <ion-text class="headerMenuText">Menu</ion-text>
+          <ion-icon [class]="headerMenuIcon.class" [name]="headerMenuIcon.name"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
+    <div [class]="headerMobileMenuScss" [hidden]="!isMobileMenuActive">
+      <ion-row class="ion-text-center">
+        <ion-col size="12">
+          <ion-accordion-group #menuMobile_acc>
+            @for (item of accordionMobileMenu; track item) {
+              <ion-accordion [value]="item.menuOption.value">
+                <ion-item slot="header">
+                  <ion-label>
+                    {{ item.menuOption.label }}
+                  </ion-label>
+                </ion-item>
+                <div [class]="item.menuOption.divScss" slot="content">
+                  @for (subItem of item.menuOption.services; track subItem) {
+                    <ion-row class="ion-text-center">
+                      <ion-col size="1">
+                        <ion-icon [name]="subItem.icon" class="headerMenuIcons"></ion-icon>
+                      </ion-col>
+                      <ion-col size="11">
+                        <ion-button expand="full" class="headerMenuButton">
+                          <ion-label [class]="subItem.spanScss">
+                            {{ subItem.spanTxt }}
+                          </ion-label>
+                        </ion-button>
+                      </ion-col>
+                    </ion-row>
+                  }
+                </div>
+              </ion-accordion>
+            }
+          </ion-accordion-group>
+        </ion-col>
+      </ion-row>
+    </div>
+
+    <!-- Desktop Devices -->
+
+    <ion-row class="ion-hide-md-down ion-text-center">
+      <ion-col size="2">
+        <ion-img [src]="headerLogoImg.src" [title]="headerLogoImg.title"
+                 [alt]="headerLogoImg.alt" [style]="headerLogoImg.style_lg"></ion-img>
+      </ion-col>
+      @for (item of desktopMenu; track item; ) {
+        <ion-col [size]="8 / desktopMenu.length" class="headerDesktopMenu">
+          <ion-button class="headerMenuButton" (click)="desktopDevicesMenu(item.menuOption.value, $index)">
+            <ion-label [class]="item.menuOption.labelScss">{{ item.menuOption.label }}</ion-label>
+          </ion-button>
+
+        </ion-col>
+      }
+      <ion-col size="2">
+        <ion-button class="headerMenuButton" title="About Me">
+
+        </ion-button>
+
+      </ion-col>
+    </ion-row>
+
+    <div [hidden]="!activeDesktopMenuOption.isActive">
+      <ion-row class="ion-text-center">
+        <ion-col size="12">
+          @if (activeDesktopMenuOption.value != "") {
+            @for (service of desktopMenu[activeDesktopMenuOption.index].menuOption.services; track service) {
+              <ion-button class="headerMenuButton">
+                <ion-label class="">
+                  {{ service.spanTxt }}
+                </ion-label>
+              </ion-button>
+            }
+          }
+
+        </ion-col>
+
+      </ion-row>
+    </div>
+
+
+  </ion-grid>
+
+</ion-header>
