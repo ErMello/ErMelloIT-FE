@@ -1,8 +1,15 @@
+.headerSubMenu {
+  //border-top: black 1px solid;
+  margin-top: -3%;
+  margin-bottom: 2%;
+
+}
 
 .headerMenuButton {
   --background: transparent;
   --box-shadow: 0px;
   --color: primary;
+  --ripple-color: transparent;
 }
 
 .headerMenuText {
@@ -24,7 +31,8 @@
 }
 
 .headerIcons {
-  color: darkgreen;
-  font-size: 2em;
+  height: 32px;
+  width: 32px;
+  margin-right: 2%;
 }
 

@@ -29,15 +29,17 @@
                   </ion-label>
                 </ion-item>
                 <div [class]="item.menuOption.divScss" slot="content">
-                  @for (subItem of item.menuOption.services; track subItem) {
+                  @for (service of item.menuOption.services; track service) {
                     <ion-row class="ion-text-center">
+                      <!-- TODO choose between icon and text or only text -->
                       <ion-col size="1">
-                        <ion-icon [name]="subItem.icon" class="headerMenuIcons"></ion-icon>
+                        <img [src]="service.iconSrc" [class]="service.iconScss" [title]="service.spanTxt"
+                             [alt]="service.spanTxt" draggable="false">
                       </ion-col>
                       <ion-col size="11">
                         <ion-button expand="full" class="headerMenuButton">
-                          <ion-label [class]="subItem.spanScss">
-                            {{ subItem.spanTxt }}
+                          <ion-label [class]="service.spanScss">
+                            {{ service.spanTxt }}
                           </ion-label>
                         </ion-button>
                       </ion-col>
@@ -56,7 +58,7 @@
     <ion-row class="ion-hide-md-down ion-text-center">
       <ion-col size="2">
         <ion-img [src]="headerLogoImg.src" [title]="headerLogoImg.title"
-                 [alt]="headerLogoImg.alt" [style]="headerLogoImg.style_lg"></ion-img>
+                 [alt]="headerLogoImg.alt" [style]="headerLogoImg.style_lg" draggable="false"></ion-img>
       </ion-col>
       @for (item of desktopMenu; track item; ) {
         <ion-col [size]="8 / desktopMenu.length" class="headerDesktopMenu">
@@ -76,10 +78,15 @@
 
     <div [hidden]="!activeDesktopMenuOption.isActive">
       <ion-row class="ion-text-center">
-        <ion-col size="12">
+        <ion-col size="2"></ion-col>
+        <ion-col size="8">
+          <ion-item-divider class="headerSubMenu"></ion-item-divider>
           @if (activeDesktopMenuOption.value != "") {
             @for (service of desktopMenu[activeDesktopMenuOption.index].menuOption.services; track service) {
-              <ion-button class="headerMenuButton">
+
+              <ion-button shape="round" class="headerMenuButton">
+                <img [src]="service.iconSrc" [class]="service.iconScss" [title]="service.spanTxt"
+                     [alt]="service.spanTxt" draggable="false">
                 <ion-label class="">
                   {{ service.spanTxt }}
                 </ion-label>

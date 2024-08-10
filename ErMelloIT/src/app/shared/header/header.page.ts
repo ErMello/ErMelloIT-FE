@@ -28,9 +28,10 @@ export class HeaderPage implements OnInit {
         divScss: "webServices",
         services: [
           {
-            spanScss: "webServices_websites",
+            spanScss: "computerServices_websites",
             spanTxt: "WebSites",
-            icon: "globe"
+            iconSrc: "../../../assets/icon/header/websites.svg",
+            iconScss: "headerIcons"
           }
         ]
       },
@@ -44,12 +45,14 @@ export class HeaderPage implements OnInit {
           {
             spanScss: "computerServices_gaming",
             spanTxt: "Gaming",
-            icon: "game-controller"
+            iconSrc: "../../../assets/icon/header/gaming.svg",
+            iconScss: "headerIcons"
           },
           {
             spanScss: "computerServices_workstation",
             spanTxt: "WorkStations",
-            icon: "code-working"
+            iconSrc: "../../../assets/icon/header/workstation.svg",
+            iconScss: "headerIcons"
           },/*
           {
             spanScss: "computerServices_laptop",
@@ -58,7 +61,9 @@ export class HeaderPage implements OnInit {
           {
             spanScss: "computerServices_assistance",
             spanTxt: "Assistance",
-            icon: "help-circle"
+            iconSrc: "../../../assets/icon/header/assistance.svg",
+            iconScss: "headerIcons"
+
           }
         ]
       }
@@ -77,7 +82,8 @@ export class HeaderPage implements OnInit {
           {
             spanScss: "computerServices_websites",
             spanTxt: "WebSites",
-            icon: "globe"
+            iconSrc: "../../../assets/icon/header/websites.svg",
+            iconScss: "headerIcons"
           }
         ]
       }
@@ -91,12 +97,14 @@ export class HeaderPage implements OnInit {
           {
             spanScss: "computerServices_gaming",
             spanTxt: "Gaming",
-            icon: "game-controller"
+            iconSrc: "../../../assets/icon/header/gaming.svg",
+            iconScss: "headerIcons"
           },
           {
             spanScss: "computerServices_workstation",
             spanTxt: "WorkStations",
-            icon: "code-working"
+            iconSrc: "../../../assets/icon/header/workstation.svg",
+            iconScss: "headerIcons"
           },/*
           {
             spanScss: "computerServices_laptop",
@@ -105,7 +113,9 @@ export class HeaderPage implements OnInit {
           {
             spanScss: "computerServices_assistance",
             spanTxt: "Assistance",
-            icon: "help-circle"
+            iconSrc: "../../../assets/icon/header/assistance.svg",
+            iconScss: "headerIcons"
+
           }
         ]
       }
