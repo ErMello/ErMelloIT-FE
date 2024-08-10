@@ -31,7 +31,6 @@
                 <div [class]="item.menuOption.divScss" slot="content">
                   @for (service of item.menuOption.services; track service) {
                     <ion-row class="ion-text-center">
-                      <!-- TODO choose between icon and text or only text -->
                       <ion-col size="1">
                         <img [src]="service.iconSrc" [class]="service.iconScss" [title]="service.spanTxt"
                              [alt]="service.spanTxt" draggable="false">
