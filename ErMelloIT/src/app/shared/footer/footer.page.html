@@ -1,0 +1,27 @@
+<ion-footer class="backgroundWhite">
+  <ion-grid [fixed]="true">
+    <ion-row class="ion-text-center">
+      <ion-col size="12">
+        @for (social of footerSocials; track social) {
+          <ion-button class="footerSocialButtons" [title]="social.socialName"
+                      (click)="window.open(social.socialLink, '_blank')"
+                      [disabled]="social.socialDisabled">
+            <ion-icon [name]="social.socialIcon"></ion-icon>
+          </ion-button>
+        }
+
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-text-center">
+      <ion-col size="12">
+        <ion-button shape="round" [class]="footerResumeButton.scss"
+                    [title]="footerResumeButton.title" (click)="null"
+                    [disabled]="footerResumeButton.disabled">
+          <ion-label>{{ "Download Resume" }}</ion-label>
+          <ion-icon name="document"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+</ion-footer>

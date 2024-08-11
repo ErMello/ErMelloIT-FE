@@ -1,3 +1,7 @@
+.backgroundWhite{
+  background-color: white;
+}
+
 .headerSubMenu {
   //border-top: black 1px solid;
   margin-top: -3%;
@@ -34,5 +38,19 @@
   height: 32px;
   width: 32px;
   margin-right: 2%;
+}
+
+.headerButtonAction {
+  padding-top: 6%;
+}
+
+.buttonBlack {
+  --color: white;
+  --color-hover: white;
+  --background: black;
+}
+
+.buttonBlack:hover {
+  --background: darkgreen;
 }
 

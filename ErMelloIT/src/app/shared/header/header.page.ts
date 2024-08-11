@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-header',
@@ -28,7 +29,7 @@ export class HeaderPage implements OnInit {
         divScss: "webServices",
         services: [
           {
-            spanScss: "computerServices_websites",
+            spanScss: "webServices_websites",
             spanTxt: "WebSites",
             iconSrc: "../../../assets/icon/header/websites.svg",
             iconScss: "headerIcons"
@@ -80,7 +81,7 @@ export class HeaderPage implements OnInit {
         labelScss: "desktopMenu_labelScss",
         services: [
           {
-            spanScss: "computerServices_websites",
+            spanScss: "webServices_websites",
             spanTxt: "WebSites",
             iconSrc: "../../../assets/icon/header/websites.svg",
             iconScss: "headerIcons"
@@ -126,7 +127,7 @@ export class HeaderPage implements OnInit {
   isMobileMenuActive = false;
   headerMobileMenuScss: string = "headerMobileMenu";
 
-  constructor() {
+  constructor(private router: Router) {
   }
 
   ngOnInit() {
@@ -154,6 +155,10 @@ export class HeaderPage implements OnInit {
       this.activeDesktopMenuOption.value = "";
     }
     this.activeDesktopMenuOption.index = index;
+  }
+
+  navigateTo(url: string) {
+    this.router.navigate([url])
   }
 
 }

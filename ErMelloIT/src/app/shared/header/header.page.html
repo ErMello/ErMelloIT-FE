@@ -1,11 +1,15 @@
-<ion-header>
+<ion-header class="backgroundWhite">
   <ion-grid [fixed]="true">
 
     <!-- Mobile Devices -->
     <ion-row class="ion-text-center ion-hide-md-up">
       <ion-col size="6">
-        <ion-img [src]="headerLogoImg.src" [title]="headerLogoImg.title"
-                 [alt]="headerLogoImg.alt" [style]="headerLogoImg.style_sm"></ion-img>
+
+
+        <!-- TODO Navigate to home by click on img -->
+        <img [src]="headerLogoImg.src" [title]="headerLogoImg.title"
+             [alt]="headerLogoImg.alt" [style]="headerLogoImg.style_sm">
+
 
       </ion-col>
       <ion-col size="6" class="ion-text-right">
@@ -50,6 +54,13 @@
           </ion-accordion-group>
         </ion-col>
       </ion-row>
+      <ion-row class="ion-text-center">
+        <ion-col size="12">
+          <ion-button expand="full" shape="round" class="buttonBlack" title="Enquire">
+            <ion-label>{{ "Enquire" }}</ion-label>
+          </ion-button>
+        </ion-col>
+      </ion-row>
     </div>
 
     <!-- Desktop Devices -->
@@ -68,9 +79,10 @@
         </ion-col>
       }
       <ion-col size="2">
-        <ion-button class="headerMenuButton" title="About Me">
-
+        <ion-button shape="round" expand="full" class="headerButtonAction buttonBlack" title="Enquire">
+          <ion-label>{{ "Enquire" }}</ion-label>
         </ion-button>
+
 
       </ion-col>
     </ion-row>
@@ -94,7 +106,6 @@
           }
 
         </ion-col>
-
       </ion-row>
     </div>
 

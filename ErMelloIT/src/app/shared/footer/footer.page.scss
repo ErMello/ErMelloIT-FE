@@ -1,0 +1,27 @@
+.backgroundWhite{
+  background-color: white;
+}
+
+.footerSocialButtons {
+  --background: transparent;
+  --box-shadow: 0px;
+  --color: primary;
+  --ripple-color: transparent;
+}
+
+.buttonBlack {
+  --background: black;
+  --color: white;
+}
+
+.buttonBlack:hover {
+  --background: darkgreen;
+}
+
+.buttonDisabled {
+  --background: darkred;
+}
+
+.buttonDisabled:hover {
+  cursor: not-allowed;
+}
