@@ -1,0 +1,43 @@
+.modalEnquire {
+  border-radius: -5%;
+}
+
+.modalEnquireHeaderButton {
+  --background: transparent;
+  --ripple-color: transparent;
+  --box-shadow: 0px;
+}
+
+.modalEnquireCancelButton {
+  --color: darkred;
+}
+
+.modalEnquireSendButton {
+  --color: darkgreen;
+}
+
+.modalEnquireTitle {
+  font-size: 1.5em;
+}
+
+#progress {
+  width: 100%;
+  height: 7px;
+  box-shadow: inset 1px 1px 2px #ccc;
+  border: 1px solid #bbb;
+  border-radius: 15px;
+}
+
+#progress-bar {
+  height: 100%;
+}
+
+#remaining-chars {
+  font-size: 11px;
+  color: darkred;
+  margin-top: 3px;
+  float: right;
+  display: none;
+}
+
+

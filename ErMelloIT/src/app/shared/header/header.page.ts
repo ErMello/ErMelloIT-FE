@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
+import {ModalController} from "@ionic/angular";
+import {EnquireComponent} from "../modals/enquire/enquire.component";
 
 @Component({
   selector: 'app-header',
@@ -127,7 +129,7 @@ export class HeaderPage implements OnInit {
   isMobileMenuActive = false;
   headerMobileMenuScss: string = "headerMobileMenu";
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private modalEnquireCtrl: ModalController) {
   }
 
   ngOnInit() {
@@ -155,6 +157,16 @@ export class HeaderPage implements OnInit {
       this.activeDesktopMenuOption.value = "";
     }
     this.activeDesktopMenuOption.index = index;
+  }
+
+  async openEnquireForm(){
+    const enquireModal = await this.modalEnquireCtrl.create({
+      component: EnquireComponent
+    });
+    await enquireModal.present();
+    const { data, role } = await enquireModal.onWillDismiss();
+    console.log('modalEnquire Data: ' + data);
+    console.log('modalEnquire Role: ' + role);
   }
 
   navigateTo(url: string) {

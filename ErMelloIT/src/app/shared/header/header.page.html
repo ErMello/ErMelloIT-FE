@@ -4,13 +4,10 @@
     <!-- Mobile Devices -->
     <ion-row class="ion-text-center ion-hide-md-up">
       <ion-col size="6">
-
-
-        <!-- TODO Navigate to home by click on img -->
-        <img [src]="headerLogoImg.src" [title]="headerLogoImg.title"
-             [alt]="headerLogoImg.alt" [style]="headerLogoImg.style_sm">
-
-
+        <a href="/home">
+          <ion-img [src]="headerLogoImg.src" [title]="headerLogoImg.title"
+                   [alt]="headerLogoImg.alt" [style]="headerLogoImg.style_sm" draggable="false"></ion-img>
+        </a>
       </ion-col>
       <ion-col size="6" class="ion-text-right">
         <ion-button class="headerMenuButton" (click)="isMobileMenuActive = !isMobileMenuActive;
@@ -56,7 +53,8 @@
       </ion-row>
       <ion-row class="ion-text-center">
         <ion-col size="12">
-          <ion-button expand="full" shape="round" class="buttonBlack" title="Enquire">
+          <ion-button expand="full" shape="round" class="buttonBlack" title="Enquire"
+                      (click)="openEnquireForm()">
             <ion-label>{{ "Enquire" }}</ion-label>
           </ion-button>
         </ion-col>
@@ -67,8 +65,11 @@
 
     <ion-row class="ion-hide-md-down ion-text-center">
       <ion-col size="2">
-        <ion-img [src]="headerLogoImg.src" [title]="headerLogoImg.title"
-                 [alt]="headerLogoImg.alt" [style]="headerLogoImg.style_lg" draggable="false"></ion-img>
+        <a href="/home">
+          <ion-img [src]="headerLogoImg.src" [title]="headerLogoImg.title"
+                   [alt]="headerLogoImg.alt" [style]="headerLogoImg.style_lg" draggable="false"></ion-img>
+        </a>
+
       </ion-col>
       @for (item of desktopMenu; track item; ) {
         <ion-col [size]="8 / desktopMenu.length" class="headerDesktopMenu">
@@ -79,7 +80,8 @@
         </ion-col>
       }
       <ion-col size="2">
-        <ion-button shape="round" expand="full" class="headerButtonAction buttonBlack" title="Enquire">
+        <ion-button shape="round" expand="full" class="headerButtonAction buttonBlack" title="Enquire"
+                    (click)="openEnquireForm()">
           <ion-label>{{ "Enquire" }}</ion-label>
         </ion-button>
 
