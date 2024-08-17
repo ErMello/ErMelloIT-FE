@@ -1,6 +1,15 @@
-.backgroundWhite{
-  background-color: white;
+@media (prefers-color-scheme: light) {
+  .background{
+    background-color: white;
+  }
 }
+
+@media (prefers-color-scheme: dark) {
+  .background{
+    background-color: black;
+  }
+}
+
 
 .footerSocialButtons {
   --background: transparent;

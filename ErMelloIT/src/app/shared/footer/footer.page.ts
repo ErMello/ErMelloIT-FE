@@ -44,7 +44,7 @@ export class FooterPage implements OnInit {
       this.footerResumeButton.scss = "buttonDisabled";
     } else {
       this.footerResumeButton.disabled = false;
-      this.footerResumeButton.scss = "buttonBlack";
+      this.footerResumeButton.scss = "button";
     }
   }
 

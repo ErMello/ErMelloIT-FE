@@ -11,7 +11,7 @@ import {EnquireComponent} from "../modals/enquire/enquire.component";
 export class HeaderPage implements OnInit {
 
   headerLogoImg = {
-    src: "../../assets/imgs/header_home_logo.png",
+    src: "",
     title: "Matteo Gelsomini",
     alt: "Matteo Gelsomini",
     style_sm: "max-width: 40%; max-height: 60%",
@@ -72,9 +72,7 @@ export class HeaderPage implements OnInit {
       }
     }
   ]
-  accordionDesktopMenu = [
-    {}
-  ]
+
   desktopMenu = [
     {
       menuOption: {
@@ -128,12 +126,23 @@ export class HeaderPage implements OnInit {
   activeDesktopMenuOption = {value: "", isActive: false, index: 0};
   isMobileMenuActive = false;
   headerMobileMenuScss: string = "headerMobileMenu";
+  isDarkModeDISABLED = false;
 
   constructor(private router: Router, private modalEnquireCtrl: ModalController) {
   }
 
   ngOnInit() {
     this.mobileMenu(this.isMobileMenuActive);
+    if(!this.isDarkModeDISABLED) {
+      if(window.matchMedia('(prefers-color-scheme: light)').matches) {
+        this.headerLogoImg.src = "../../assets/imgs/header_home_logo.png";
+      } else if(window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        this.headerLogoImg.src = "../../assets/imgs/header_home_logo-dark.png";
+      }
+    } else {
+      this.headerLogoImg.src = "../../assets/imgs/header_home_logo.png";
+    }
+
   }
 
   mobileMenu(isExpanded: boolean) {

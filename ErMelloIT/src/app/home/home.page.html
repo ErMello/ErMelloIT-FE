@@ -7,6 +7,12 @@
     <ion-grid [fixed]="true">
       <ion-row class="ion-text-center">
         <ion-col size="12">
+          <ion-alert
+            [isOpen]="!isWebAppReady"
+            header="Web App not ready"
+            message="This WebApp is still under development. Please come back later"
+            [buttons]="['Acknowledge']"
+          ></ion-alert>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sed tellus nec mauris auctor dignissim fermentum in
             risus. Sed nec convallis sapien, id tincidunt enim. Mauris ornare eleifend nunc id mattis. Fusce augue diam,
