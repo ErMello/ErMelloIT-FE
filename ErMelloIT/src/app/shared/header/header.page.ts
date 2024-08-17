@@ -126,24 +126,19 @@ export class HeaderPage implements OnInit {
   activeDesktopMenuOption = {value: "", isActive: false, index: 0};
   isMobileMenuActive = false;
   headerMobileMenuScss: string = "headerMobileMenu";
-  isDarkModeDISABLED = false;
 
   constructor(private router: Router, private modalEnquireCtrl: ModalController) {
   }
 
   ngOnInit() {
     this.mobileMenu(this.isMobileMenuActive);
-    if(!this.isDarkModeDISABLED) {
-      if(window.matchMedia('(prefers-color-scheme: light)').matches) {
-        this.headerLogoImg.src = "../../assets/imgs/header_home_logo.png";
-      } else if(window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        this.headerLogoImg.src = "../../assets/imgs/header_home_logo-dark.png";
-      }
-    } else {
+    if (window.matchMedia('(prefers-color-scheme: light)').matches) {
       this.headerLogoImg.src = "../../assets/imgs/header_home_logo.png";
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      this.headerLogoImg.src = "../../assets/imgs/header_home_logo-dark.png";
     }
-
   }
+
 
   mobileMenu(isExpanded: boolean) {
     if (isExpanded) {
@@ -155,25 +150,24 @@ export class HeaderPage implements OnInit {
   }
 
   desktopDevicesMenu(optionSelected: string, index: number): void {
-    if(this.activeDesktopMenuOption.value == ""){
+    if (this.activeDesktopMenuOption.value == "") {
       this.activeDesktopMenuOption.isActive = !this.activeDesktopMenuOption.isActive;
     }
-    if(this.activeDesktopMenuOption.value != optionSelected){
+    if (this.activeDesktopMenuOption.value != optionSelected) {
       this.activeDesktopMenuOption.value = optionSelected;
-    }
-    else if(this.activeDesktopMenuOption.value == optionSelected) {
+    } else if (this.activeDesktopMenuOption.value == optionSelected) {
       this.activeDesktopMenuOption.isActive = !this.activeDesktopMenuOption.isActive;
       this.activeDesktopMenuOption.value = "";
     }
     this.activeDesktopMenuOption.index = index;
   }
 
-  async openEnquireForm(){
+  async openEnquireForm() {
     const enquireModal = await this.modalEnquireCtrl.create({
       component: EnquireComponent
     });
     await enquireModal.present();
-    const { data, role } = await enquireModal.onWillDismiss();
+    const {data, role} = await enquireModal.onWillDismiss();
     console.log('modalEnquire Data: ' + data);
     console.log('modalEnquire Role: ' + role);
   }
