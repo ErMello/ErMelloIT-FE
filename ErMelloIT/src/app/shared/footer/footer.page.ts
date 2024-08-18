@@ -22,9 +22,9 @@ export class FooterPage implements OnInit {
     },
     {
       socialName: "GitHub",
-      socialLink: "",
+      socialLink: "https://www.github.com/ErMello",
       socialIcon: "logo-github",
-      socialDisabled: true
+      socialDisabled: false
     }
   ]
 

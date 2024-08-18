@@ -17,8 +17,18 @@
   <!-- add to homescreen for ios -->
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-</head>
+  <!-- Global site tag (gtag.js) - Google Analytics
+   TODO check if analytics works on PWA, add consent through cookie banner for collecting data
+   -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5K438P7YY4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  </script>
+  <!-- End Google Analytics -->
 
+</head>
 <body>
   <app-root></app-root>
 </body>
