@@ -1,27 +1,59 @@
-#container {
-  text-align: center;
+@media (prefers-color-scheme: light) {
 
-  position: absolute;
+  .customButton {
+    --color: black;
+    --color-hover: black;
+    --background: white;
+  }
+
+}
+
+@media (prefers-color-scheme: dark) {
+
+  .customButton {
+    --color: black;
+    --color-hover: black;
+    --background: white;
+  }
+}
+
+.homeSlideContainer {
+
+}
+
+.homeSlideImg {
+  width: 100%;
+  height: auto;
+}
+.swiper-container {
+  --swiper-pagination-color: white;
+  --swiper-navigation-color: white;
+}
+
+.slider {
+  //max-width: 854px;
+  //max-height: 480px;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+}
+
+.sliderTxt {
+  top: 40%;
   left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  font-size: 2em;
+  background-color: white;
+  border: white 5px solid;
+  //border-radius: 8px;
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
-
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
-}
-
-#container a {
-  text-decoration: none;
+.sliderButton {
+  position: absolute;
+  bottom: 2%;
+  right: 2%;
+  font-size: 1.5em;
 }

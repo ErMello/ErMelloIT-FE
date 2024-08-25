@@ -30,6 +30,7 @@ export class FooterPage implements OnInit {
 
   footerResumeButton = {
     title: "Download Resume",
+    /* ../../../assets/docs/resume/Resume_Matteo_Gelsomini.pdf */
     url: "",
     scss: "",
     disabled: true
@@ -44,7 +45,7 @@ export class FooterPage implements OnInit {
       this.footerResumeButton.scss = "buttonDisabled";
     } else {
       this.footerResumeButton.disabled = false;
-      this.footerResumeButton.scss = "button";
+      this.footerResumeButton.scss = "buttonResume";
     }
   }
 

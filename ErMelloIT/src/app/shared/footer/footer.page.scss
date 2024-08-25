@@ -2,11 +2,17 @@
   .background{
     background-color: white;
   }
+  .buttonResume {
+
+  }
 }
 
 @media (prefers-color-scheme: dark) {
   .background{
     background-color: black;
+  }
+  .buttonResume {
+
   }
 }
 
