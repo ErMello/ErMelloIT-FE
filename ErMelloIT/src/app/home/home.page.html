@@ -2,7 +2,6 @@
 <ion-content [fullscreen]="true">
 
 
-
   <div #homeContent class="">
     <ion-grid [fixed]="true">
       <ion-row class="ion-text-center">
@@ -28,7 +27,7 @@
                            [title]="slider.title"
                            [alt]="slider.alt"></ion-img>
                   <ion-text class="sliderTxt ion-text-center">{{ slider.descr }}</ion-text>
-                  <ion-button class="sliderButton customButton">
+                  <ion-button class="sliderButton customButton" (click)="navigateTo(slider.buttonClick)">
                     {{ "Find Out" }}
                     <ion-icon name="information-circle"></ion-icon>
                   </ion-button>
@@ -38,6 +37,58 @@
           </div>
         </ion-col>
       </ion-row>
+      <!-- Description Section -->
+      <ion-row class="marginTop2_5">
+        <ion-col size="12">
+            <img src="../../assets/icon/home/sourcecode.svg" title="Web Services"
+                 alt="Web Services" class="icon64 svgDarkGreen verticalAlignMiddle"/>
+            <ion-text class="homeH2 verticalAlignMiddle">
+              {{ "Web Services" }}
+            </ion-text>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12">
+          <ion-text class="homeDesc">
+            {{ homeWebServicesDesc }}
+          </ion-text>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-text-center marginTop2_5">
+        <ion-col size="12">
+          @for (item of techStackWeb; track item) {
+            <img [title]="item.title" [alt]="item.alt" [src]="item.src" [class]="item.scssClass"/>
+          }
+        </ion-col>
+      </ion-row>
+      <ion-row class="marginTop2_5">
+
+      </ion-row>
+
+      <ion-row class="marginTop2_5">
+        <ion-col size="12">
+          <img src="../../assets/icon/home/computer.svg" title="Computer Services"
+               alt="Computer Services" class="icon64 svgDodgerBlue verticalAlignMiddle"/>
+          <ion-text class="homeH2 verticalAlignMiddle">
+            {{ "Computer Services" }}
+          </ion-text>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12">
+          <ion-text class="homeDesc">
+            {{ homeComputerServicesDesc }}
+          </ion-text>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-text-center marginTop2_5">
+        <ion-col size="12">
+          @for (item of computerBrands; track item) {
+            <img [title]="item.title" [alt]="item.alt" [src]="item.src" [class]="item.scssClass"/>
+          }
+        </ion-col>
+      </ion-row>
+
     </ion-grid>
   </div>
 </ion-content>

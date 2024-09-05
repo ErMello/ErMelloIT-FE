@@ -35,6 +35,12 @@ export class HeaderPage implements OnInit {
             spanTxt: "WebSites",
             iconSrc: "../../../assets/icon/header/websites.svg",
             iconScss: "headerIcons"
+          },
+          {
+            spanScss: "webServices_webapps",
+            spanTxt: "WebApps",
+            iconSrc: "../../../assets/icon/header/webapps.svg",
+            iconScss: "headerIcons"
           }
         ]
       },
@@ -84,6 +90,12 @@ export class HeaderPage implements OnInit {
             spanScss: "webServices_websites",
             spanTxt: "WebSites",
             iconSrc: "../../../assets/icon/header/websites.svg",
+            iconScss: "headerIcons"
+          },
+          {
+            spanScss: "webServices_webapps",
+            spanTxt: "WebApps",
+            iconSrc: "../../../assets/icon/header/webapps.svg",
             iconScss: "headerIcons"
           }
         ]

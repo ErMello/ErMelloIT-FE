@@ -48,6 +48,7 @@
   font-size: 2em;
   background-color: white;
   border: white 5px solid;
+  color: black;
   //border-radius: 8px;
 }
 
@@ -55,5 +56,17 @@
   position: absolute;
   bottom: 2%;
   right: 2%;
+  font-size: 1.5em;
+}
+
+.verticalAlignMiddle {
+  vertical-align: middle;
+}
+
+.homeH2 {
+  font-size: 2.5em;
+}
+
+.homeDesc {
   font-size: 1.5em;
 }

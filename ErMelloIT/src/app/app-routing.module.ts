@@ -19,6 +19,14 @@ const routes: Routes = [
     path: 'footer',
     loadChildren: () => import('./shared/footer/footer.module').then( m => m.FooterPageModule)
   },
+  {
+    path: 'services/web',
+    loadChildren: () => import('./pages/services/web/web.module').then(m => m.WebPageModule)
+  },
+  {
+    path: 'services/computer',
+    loadChildren: () => import('./pages/services/computer/computer.module').then(m => m.ComputerPageModule)
+  },
 ];
 
 @NgModule({
